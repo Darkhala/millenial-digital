@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Millennial Digital</title>
+    <link rel="icon" type="image/png" href="images/THE MILLENIAL LOGO (5).png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="logo">
+            <img src="images/THE MILLENIAL LOGO (6).jpg" alt="The Millennial Digital Logo">
+        </div>
+        <div class="right-section">
+            <div class="cart">Cart [0]</div>
+            <div class="vertical-line"></div>
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <nav class="menu" id="menu">
+            <a href="#about">About Us</a>
+            <a href="#help">How We Help Clients</a>
+            <a href="#work">Work We've Done</a>
+            <a href="#testimonials">What Clients Think</a>
+            <a href="#benefits">Benefits</a>
+            <a href="#insights">Latest Insights</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>
+                <span id="first">THE</span> <br>
+                <span class="outline">MILLENNIAL</span> <br>
+                <span id="last">DIGITAL</span>
+            </h1>
+            <p><br><br> Empowering Africa's Brands Through Digital Excellence..</p>
+            <button class="cta"> Let's Transform your brand</button>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Selecting elements individually
+                const firstWord = document.getElementById("first"); // THE
+                const outlineWord = document.querySelector(".outline"); // MILLENNIAL
+                const lastWord = document.getElementById("last"); // DIGITAL
+                const paragraph = document.querySelector(".hero p"); // Paragraph
+                const button = document.querySelector(".hero .cta"); // CTA Button
+
+                // Creating an array in the correct sequence with unique delays
+                const heroElements = [
+                    { element: firstWord, delay: 1200 },      // First word (THE) - No delay
+                    { element: outlineWord, delay: 1600 },  // Outline word (MILLENNIAL) - 500ms after first
+                    { element: lastWord, delay: 1800 },    // Last word (DIGITAL) - 1000ms after first
+                    { element: paragraph, delay: 2000 }    // Paragraph - 1500ms after first
+                ];
+
+                // Apply animation to hero elements (excluding the CTA button)
+                heroElements.forEach(({ element, delay }) => {
+                    if (element) {
+                        element.style.opacity = "0";
+                        element.style.transform = "translateY(50px)";
+                        setTimeout(() => {
+                            element.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+                            element.style.opacity = "1";
+                            element.style.transform = "translateY(0)";
+                        }, delay);
+                    }
+                });
+
+                // Scroll-triggered animation for the CTA button
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                button.style.opacity = "1";
+                                button.style.transform = "translateY(0)";
+                                button.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+                            }
+                        });
+                    },
+                    { threshold: 0.5 } // Trigger when 50% of the button is visible
+                );
+
+                // Initially hide the button
+                button.style.opacity = "0";
+                button.style.transform = "translateY(50px)";
+
+                // Observe the CTA button
+                observer.observe(button);
+            });
+
+        </script>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+         <!-- Rotating Circle with Play Button -->
+         <div class="play-circle" id="playCircle">
+            <div class="circle">
+                <i class="fas fa-play"></i>
+                <div class="rotating-text">
+                    <span>PLAY VIDEO </span>
+                    <span>PLAY VIDEO </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Overlay -->
+        <div class="video-overlay" id="videoOverlay">
+            <div class="video-container">
+                <span class="close-btn" id="closeVideo">&times;</span>
+                <iframe id="youtubeFrame" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+      
+          <!-- Statistics Boxes -->
+          <div class="stats-grid">
+            <div class="stat-item">
+              <h3>5+</h3>
+              <p>Years of Experience</p>
+            </div>
+            <div class="stat-item">
+              <h3>100+</h3>
+              <p>Brands Transformed through our tailored strategies</p>
+            </div>
+            <div class="stat-item">
+              <h3>50%</h3>
+              <p>Increase in Engagement for our clients</p>
+            </div>
+            <div class="stat-item">
+              <h3>10M+</h3>
+              <p>Audience Reached through our campaigns</p>
+            </div>
+          </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Select all elements that need to be animated on scroll
+                const elementsToAnimate = document.querySelectorAll(".play-circle, .stat-item");
+                
+                // Initially hide elements and move them down
+                elementsToAnimate.forEach(element => {
+                    element.style.opacity = "0";
+                    element.style.transform = "translateY(50px)";
+                });
+
+                // Intersection Observer to trigger animation when in view
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.opacity = "1";
+                                entry.target.style.transform = "translateY(0)";
+                                entry.target.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+                                observer.unobserve(entry.target); // Stop observing once animated
+                            }
+                        });
+                    },
+                    { threshold: 0.5 } // Trigger when 50% of the element is visible
+                );
+
+                // Observe each element in the statistics section
+                elementsToAnimate.forEach(element => observer.observe(element));
+
+                // Play Circle and Video Overlay
+                const playCircle = document.getElementById("playCircle");
+                const videoOverlay = document.getElementById("videoOverlay");
+                const closeVideo = document.getElementById("closeVideo");
+                const youtubeFrame = document.getElementById("youtubeFrame");
+
+                // Set YouTube video link (replace "YOUR_VIDEO_ID" with your actual video ID)
+                const youtubeURL = "https://www.youtube.com/embed/-d-OfwqA6gY?si=_tgqiWS_9KNe41ct";
+
+                // Open Video Overlay on Click
+                playCircle.addEventListener("click", function () {
+                    youtubeFrame.src = youtubeURL; // Loads the video but does NOT autoplay
+                    videoOverlay.classList.add("show"); // Show overlay
+                });
+
+                // Close Video Overlay
+                closeVideo.addEventListener("click", function () {
+                    videoOverlay.classList.remove("show");
+                    youtubeFrame.src = ""; // Stop the video from playing
+                });
+
+                // Close overlay if clicked outside the video container
+                videoOverlay.addEventListener("click", function (e) {
+                    if (e.target === videoOverlay) {
+                        videoOverlay.classList.remove("show");
+                        youtubeFrame.src = ""; // Stop the video from playing
+                    }
+                });
+            });
+
+        </script>
+      </section>
+      
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p><strong>Our Story:</strong> The Millennial Digital was born from a passion to empower African businesses with the tools to thrive in the digital era. Our founder, Noanne Ndombi, identified a significant gap in how brands connect with Millennials, Gen Z, and future generations in meaningful, impactful ways. Many brands struggled with digital storytelling, reaching the right audience, and driving sustainable growth. We built The Millennial Digital to bridge this gap, becoming an Afro-centric digital media hub that merges strategy, creativity, and innovation.</p>
+            <p><strong>Mission:</strong> To inform, inspire, and empower African brands with high-quality, tailored digital content that resonates.</p>
+            <p><strong>Vision:</strong> To be Africa’s leading digital content and marketing partner, driving growth and relevance for brands in the digital-first world.</p>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Select the h2 and p elements inside the About Us section
+                const heading = document.querySelector("#about h2");
+                const paragraphs = document.querySelectorAll("#about p");
+
+                // Initially hide the elements and move them down
+                heading.style.opacity = "0";
+                heading.style.transform = "translateY(50px)"; // Move down initially
+
+                paragraphs.forEach(p => {
+                    p.style.opacity = "0";
+                    p.style.transform = "translateY(50px)"; // Move down initially
+                });
+
+                // Function to check if the elements are in view
+                function checkScroll() {
+                    const rectHeading = heading.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+
+                    // Check if the h2 is in the viewport (50% visible)
+                    if (rectHeading.top <= windowHeight * 0.5 && rectHeading.bottom >= windowHeight * 0.5) {
+                        heading.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+                        heading.style.opacity = "1";
+                        heading.style.transform = "translateY(0)";
+                    }
+
+                    // Check if the paragraphs are in the viewport (50% visible)
+                    paragraphs.forEach(p => {
+                        const rectPara = p.getBoundingClientRect();
+                        if (rectPara.top <= windowHeight * 0.5 && rectPara.bottom >= windowHeight * 0.5) {
+                            p.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+                            p.style.opacity = "1";
+                            p.style.transform = "translateY(0)";
+                        }
+                    });
+                }
+
+                // Initial check for when the page loads
+                checkScroll();
+
+                // Add scroll event listener
+                window.addEventListener("scroll", checkScroll);
+            });
+
+        </script>
+    </section>
+
+    
+    <!-- How We Help Clients Section -->
+    <section id="help" class="help">
+        <div class="container">
+        <h2>How We Help Clients</h2>
+        <p>
+            Every business has a story to tell, and at The Millennial Digital, we help you tell yours the right way. Whether you're a budding entrepreneur or an established brand, we create personalized strategies that amplify your voice and help you connect authentically with your audience.
+        </p>
+        <div class="help-grid">
+            <!-- Content Creation -->
+            <div class="help-item">
+                <div class="help-icon">
+                    <i class="fas fa-pen-nib"></i> <!-- Icon for content creation -->
+                </div>
+                <h3>Content Creation</h3>
+                <p>Captivating articles, ads, videos, and blogs tailored to your audience.</p>
+            </div>
+        
+            <!-- Social Media Management -->
+            <div class="help-item">
+                <div class="help-icon">
+                    <i class="fas fa-users"></i> <!-- Icon for social media -->
+                </div>
+                <h3>Social Media Management</h3>
+                <p>Building your presence, growing your community, and driving engagement.</p>
+            </div>
+        
+            <!-- SEO & Analytics -->
+            <div class="help-item">
+                <div class="help-icon">
+                    <i class="fas fa-chart-line"></i> <!-- Icon for SEO -->
+                </div>
+                <h3>SEO & Analytics</h3>
+                <p>Optimizing visibility and providing data-driven insights for growth.</p>
+            </div>
+        
+            <!-- Digital Campaigns -->
+            <div class="help-item">
+                <div class="help-icon">
+                    <i class="fas fa-bullhorn"></i> <!-- Icon for campaigns -->
+                </div>
+                <h3>Digital Campaigns</h3>
+                <p>Creating impactful campaigns that inspire and convert.</p>
+            </div>
+        
+            <!-- Email Marketing and Newsletters -->
+            <div class="help-item">
+                <div class="help-icon">
+                    <i class="fas fa-envelope"></i> <!-- Icon for email marketing -->
+                </div>
+                <h3>Email Marketing and Newsletters</h3>
+                <p>Custom email campaigns that nurture leads, retain customers, and enhance brand loyalty.</p>
+            </div>
+        </div>        
+        <p class="closing-text">
+            We don’t just market; we create movements.
+        </p>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Select elements
+                const helpHeading = document.querySelector("#help h2");
+                const helpParagraphs = document.querySelectorAll("#help p");
+                const helpItems = document.querySelectorAll(".help-item");
+
+                // Initially hide elements
+                helpHeading.style.opacity = "0";
+                helpHeading.style.transform = "translateX(-100px)"; // Move left initially
+
+                helpParagraphs.forEach(p => {
+                    p.style.opacity = "0";
+                    p.style.transform = "translateY(50px)"; // Move down initially
+                });
+
+                helpItems.forEach(item => {
+                    item.style.opacity = "0";
+                    item.style.transform = "translateY(50px)"; // Move down initially
+                });
+
+                // Function to check if elements are in the viewport
+                function checkScroll() {
+                    const windowHeight = window.innerHeight;
+                    const rectHeading = helpHeading.getBoundingClientRect();
+
+                    // Animate H2 (Slide from Left to Right)
+                    if (rectHeading.top <= windowHeight * 0.7) {
+                        helpHeading.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+                        helpHeading.style.opacity = "1";
+                        helpHeading.style.transform = "translateX(0)";
+                    }
+
+                    // Animate Paragraphs and Help Items (Slide Up)
+                    helpParagraphs.forEach((p, index) => {
+                        const rectP = p.getBoundingClientRect();
+                        if (rectP.top <= windowHeight * 0.8) {
+                            p.style.transition = `opacity 0.6s ease-out ${index * 0.2}s, transform 0.6s ease-out ${index * 0.2}s`;
+                            p.style.opacity = "1";
+                            p.style.transform = "translateY(0)";
+                        }
+                    });
+
+                    helpItems.forEach((item, index) => {
+                        const rectItem = item.getBoundingClientRect();
+                        if (rectItem.top <= windowHeight * 0.8) {
+                            item.style.transition = `opacity 0.6s ease-out ${index * 0.2}s, transform 0.6s ease-out ${index * 0.2}s`;
+                            item.style.opacity = "1";
+                            item.style.transform = "translateY(0)";
+                        }
+                    });
+                }
+
+                // Initial check when the page loads
+                checkScroll();
+
+                // Add scroll event listener
+                window.addEventListener("scroll", checkScroll);
+            });
+
+        </script>
+    </section>
+  
+    <!-- Work We've Done Section -->
+    <section id="work" class="work">
+        <div class="container">
+            <h2 class="animate-heading">Work We've Done</h2>
+            <div class="work-grid">
+                <!-- Project 1 -->
+                <div class="work-item animate-item">
+                    <img src="images/social media engagement.jpeg" alt="Project 1">
+                    <div class="work-info">
+                        <h3>Engagement Boost</h3>
+                        <p>Increased Instagram engagement by 75% for a lifestyle brand.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="work-item animate-item">
+                    <img src="images/Podcast Succeess.jpeg" alt="Project 2">
+                    <div class="work-info">
+                        <h3>Podcast Success</h3>
+                        <p>Developed a podcast series with over 20K listens.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="work-item animate-item">
+                    <img src="images/youtubeCampaign.jpeg" alt="Project 3">
+                    <div class="work-info">
+                        <h3>YouTube Campaign</h3>
+                        <p>Managed a YouTube campaign reaching 500K views in 3 months.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Custom Cursor
+                const cursor = document.createElement("div");
+                cursor.classList.add("custom-cursor");
+                cursor.textContent = "OUR PROJECT";
+                document.body.appendChild(cursor);
+
+                const workItems = document.querySelectorAll(".work-item img");
+
+                workItems.forEach((img) => {
+                    img.addEventListener("mouseenter", () => {
+                        cursor.style.opacity = "1";
+                        cursor.style.transform = "translate(-50%, -50%) scale(1)";
+                    });
+
+                    img.addEventListener("mousemove", (e) => {
+                        cursor.style.left = `${e.pageX}px`;
+                        cursor.style.top = `${e.pageY}px`;
+                    });
+
+                    img.addEventListener("mouseleave", () => {
+                        cursor.style.opacity = "0";
+                        cursor.style.transform = "translate(-50%, -50%) scale(0)";
+                    });
+
+                    img.addEventListener("click", () => {
+                        window.location.href = "#work"; 
+                    });
+                });
+
+                // Scroll Animation for Heading and Work Items
+                const heading = document.querySelector(".animate-heading");
+                const workItemsList = document.querySelectorAll(".animate-item");
+
+                function revealOnScroll() {
+                    const scrollPos = window.innerHeight * 0.85;
+
+                    if (heading.getBoundingClientRect().top < scrollPos) {
+                        heading.classList.add("show");
+                    }
+
+                    workItemsList.forEach((item) => {
+                        if (item.getBoundingClientRect().top < scrollPos) {
+                            item.classList.add("show");
+                        }
+                    });
+                }
+
+                window.addEventListener("scroll", revealOnScroll);
+                revealOnScroll(); // Call once on load in case items are already visible
+            });
+
+            // Ensure only 2 images appear per row
+            const style = document.createElement("style");
+            style.innerHTML = `
+                .work-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr); /* Two columns */
+                    gap: 2rem;
+                }
+
+                @media (max-width: 768px) {
+                    .work-grid {
+                        grid-template-columns: repeat(1, 1fr); /* One column for smaller screens */
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+
+        </script>
+    </section>       
+
+    <!-- What Clients Think Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="slide-in-left">What Clients Think</h2>
+            <div class="testimonial-container">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-box slide-up">
+                    <div class="profile-picture">
+                        <img src="images/S.H.I.E.L.D.jpg" alt="shield international">
+                    </div>
+                    <p class="testimonial-text">"The Millennial Digital transformed our social media presence. We’ve seen a massive improvement in engagement and customer loyalty. Highly recommend!"</p>
+                    <p class="client-info">E. Muray, <span>Co-Founder S.H.I.E.L.D International</span></p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-box slide-up">
+                    <div class="profile-picture">
+                        <img src="images/Gandir africa.jpg" alt="Gandir Africa">
+                    </div>
+                    <p class="testimonial-text">"From content creation to strategy, they handled it all. My sales increased by 40% within the first quarter of our collaboration."</p>
+                    <p class="client-info">Wambui Shuma <span>Founder & Lead Consultant of Gandir Africa</span></p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-box slide-up">
+                    <div class="profile-picture">
+                        <img src="images/ishara logo.png" alt="Ishara AI">
+                    </div>
+                    <p class="testimonial-text">"Their team is creative, responsive, and result-driven. They understood our brand’s voice and brought our vision to life!"</p>
+                    <p class="client-info">Wayne Egesa <span>Founder of Ishara AI Company</span></p>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const slideInTitle = document.querySelector(".slide-in-left");
+                const slideUpElements = document.querySelectorAll(".slide-up");
+
+                function checkVisibility() {
+                    const windowHeight = window.innerHeight;
+
+                    // H2 sliding in from left
+                    if (slideInTitle.getBoundingClientRect().top < windowHeight - 100) {
+                        slideInTitle.classList.add("show");
+                    }
+
+                    // Testimonial boxes sliding up
+                    slideUpElements.forEach((element) => {
+                        if (element.getBoundingClientRect().top < windowHeight - 50) {
+                            element.classList.add("show-up");
+                        }
+                    });
+                }
+
+                // Run on scroll
+                window.addEventListener("scroll", checkVisibility);
+                checkVisibility(); // Run once on load
+            });
+        </script>
+    </section>
+
+    
+  
+    <!-- Benefits of Our Services Section -->
+    <section id="benefits" class="benefits">
+        <div class="benefits-container">
+            <div class="benefits-image">
+                <img src="images/benefits.jpeg" alt="Benefits Image">
+            </div>
+            <div class="benefits-content">
+                <h2>Benefits of Our Services</h2>
+                <ul>
+                    <li>Increase social media engagement <span class="percentage"> <br>65%</span></li>
+                    <div class="progress-bar">
+                        <div class="progress" data-width="65%"></div>
+                    </div>
+                
+                    <li>Growth in brand visibility <span class="percentage">50%</span></li>
+                    <div class="progress-bar">
+                        <div class="progress" data-width="50%"></div>
+                    </div>
+                
+                    <li>Higher conversion rates <span class="percentage">30%</span></li>
+                    <div class="progress-bar">
+                        <div class="progress" data-width="30%"></div>
+                    </div>
+                
+                    <li>Satisfaction rate from existing clients <span class="percentage">80%</span></li>
+                    <div class="progress-bar">
+                        <div class="progress" data-width="80%"></div>
+                    </div>
+                </ul>                
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const progressBars = document.querySelectorAll(".progress-bar .progress");
+        
+                function handleScroll() {
+                    progressBars.forEach(bar => {
+                        const barPosition = bar.getBoundingClientRect().top;
+                        const screenHeight = window.innerHeight;
+        
+                        // Check if the bar is in the viewport
+                        if (barPosition < screenHeight) {
+                            const targetWidth = bar.getAttribute("data-width");
+                            if (!bar.style.width || bar.style.width === "0px") {
+                                bar.style.width = targetWidth; // Set the target width
+                            }
+                        }
+                    });
+                }
+        
+                // Run on scroll
+                window.addEventListener("scroll", handleScroll);
+        
+                // Run once in case elements are already visible
+                handleScroll();
+            });
+        </script>
+    </section>
+    <!--latest insights -->
+    <section id="latest-insights" class="latest-insights">
+        <div class="container">
+            <h2>Latest Insights <a href="Blogs.html" class="view-more">View More Blogs</a></h2>
+            <div class="insights-grid">
+                <div class="insight">
+                    <a href="design-process.html">
+                    <img src="images/Build-your-online-presence.jpg" alt="Blog 1"></a>
+                    <p class="date">April 27, 2023</p>
+                    <h4>5 Tips to Elevate Your Brand’s Digital Presence</h4>
+                    <p>Learn how to create a standout strategy that captures your audience’s attention.</p>
+                </div>
+                <div class="insight">
+                    <a href="branding-strategy.html">
+                    <img src="images/storytelling dm.jpeg" alt="Blog 2"></a>
+                    <p class="date">May 10, 2023</p>
+                    <h4>Why Storytelling Matters in Digital Marketing</h4>
+                    <p>Understand the power of authentic stories in creating emotional connections.</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("animate");
+                        }
+                    });
+                }, { threshold: 0.2 });
+
+                document.querySelectorAll("#latest-insights h2, .insights-grid .insight").forEach(el => {
+                    observer.observe(el);
+                });
+            });
+        </script>
+    </section>
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-us">
+        <div class="container">
+        <h2>Contact Us</h2>
+        <form>
+            <div class="form-group">
+            <input type="text" name="name" placeholder="Name*" required>
+            <input type="email" name="email" placeholder="Email Address*" required>
+            </div>
+            <textarea name="message" placeholder="Message*" rows="5" required></textarea>
+            <div class="checkbox-group">
+            <p>What services are you interested in?</p>
+            <label><input type="checkbox" name="services" value="Content Creation"> Content Creation (Blogs, Graphics & Images, Video)</label>
+            <label><input type="checkbox" name="services" value="Social Media Management"> Social Media Management</label>
+            <label><input type="checkbox" name="services" value="SEO & Analytics"> SEO & Analytics</label>
+            <label><input type="checkbox" name="services" value="Digital Campaigns"> Digital Campaigns</label>
+            <label><input type="checkbox" name="services" value="Other"> Other (specify)</label>
+            </div>
+            <button type="submit" class="btn">Send Request</button>
+        </form>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("animate");
+                        }
+                    });
+                }, { threshold: 0.2 });
+
+                document.querySelectorAll("#latest-insights h2, .insights-grid .insight, #contact h2, #contact form").forEach(el => {
+                    observer.observe(el);
+                });
+
+                document.querySelector("form").addEventListener("submit", function (event) {
+                    event.preventDefault(); // Prevent actual form submission
+
+                    // Get form values
+                    const name = document.querySelector("input[name='name']").value;
+                    const email = document.querySelector("input[name='email']").value;
+                    const message = document.querySelector("textarea[name='message']").value;
+                    
+                    // Get selected checkboxes
+                    const services = Array.from(document.querySelectorAll("input[name='services']:checked"))
+                        .map(checkbox => checkbox.value)
+                        .join(", ");
+                    
+                    // Format the email body
+                    const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AInterested Services: ${services}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+                    
+                    // Open email client with the formatted details
+                    window.location.href = `mailto:info@themillennialdigital.com?subject=Service Inquiry&body=${emailBody}`;
+                });
+            });
+
+        </script>
+    </section>
+   <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+        <div class="footer-branding">
+            <h3>The Millennial Digital</h3>
+            <p>We help you connect authentically with your audience through creative strategies and impactful campaigns.</p>
+            <p>&copy; 2025 The Millennial Digital. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#benefits">Services</a></li>
+            <li><a href="#work">Work Portfolio</a></li>
+            <li><a href="#latest-insights">Blog</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h4>Contact Information</h4>
+            <ul>
+            <li>Email: <a href="mailto:info@themillennialdigital.com">info@themillennialdigital.com</a></li>
+            <li>Phone: <a href="tel:+254705928798">+254 705 928 798</a></li>
+            <li>Location: Nairobi, Kenya</li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h4>Social Media</h4>
+            <ul>
+            <li><a href="https://instagram.com/themillenialdigital" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://facebook.com/themillenialdigital" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/themillenial_ke" target="_blank"><i class="fab fa-x-twitter"></i></a></li>
+            <li><a href="https://tiktok.com/@themillenialdigital" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+            <li><a href="https://linkedin.com/in/themillenialdigital" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://youtube.com/@themillenialdigital" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://podbean.com/@themillenialdigital" target="_blank"><i class="fas fa-podcast"></i></a></li>
+            </ul>
+        </div>
+        </div>
+    </footer>
+    
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll("#latest-insights h2, .insights-grid .insight, #contact h2, #contact form").forEach(el => {
+        observer.observe(el);
+    });
+
+    // Hamburger Menu Functionality
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    const menuLinks = document.querySelectorAll(".menu a");
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+
+    menuLinks.forEach((link, index) => {
+        link.style.animation = `slideIn 0.3s ease forwards ${index * 100}ms`;
+        link.addEventListener("click", () => {
+            menu.classList.remove("active");
+            hamburger.classList.remove("active");
+        });
+    });
+
+    // CSS styles for animations
+    const style = document.createElement("style");
+    style.innerHTML = `
+        .hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    `;
+    document.head.appendChild(style);
+}); 
+    </script>
+</body>
+</html>
