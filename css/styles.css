@@ -10,6 +10,7 @@ body {
     line-height: 1.6;
     color: white;
     background: linear-gradient(135deg, #3Db9b9, #2a8282);
+    overflow-x: hidden;
     
 }
 
@@ -586,6 +587,27 @@ body {
         position: relative;
         z-index: 1; /* Ensure image does not hide cursor */
     }  
+    .cta-container {
+        text-align: center;
+        margin-top: 2rem;
+    }
+    
+    .cta-button {
+        display: inline-block;
+        background: #C19431;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+    
+    .cta-button:hover {
+        background: #a87c29;
+        transform: scale(1.05);
+    }
 /* Testimonials Section */
 .testimonials {
     color: #ffffff;
@@ -765,18 +787,23 @@ body {
 .latest-insights {
     padding: 50px 0;
     background: rgba(0, 0, 0, 0.2);
-
+    text-align: center;
 }
 
 .insights-grid {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 0;
 }
 
 .insight {
     padding: 20px;
     border-radius: 8px;
-    width: 48%;
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
 }
 
 .insight img {
@@ -794,52 +821,62 @@ h4 {
     margin-top: 10px;
 }
 
-.view-more {
-    float: right;
-    font-size: 14px;
+.cta-button {
+    background-color: #C19431;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
     text-decoration: none;
-    color: #C19431;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #a37526;
 }
 @keyframes slideInLeft {
-  from {
-      opacity: 0;
-      transform: translateX(-50px);
-  }
-  to {
-      opacity: 1;
-      transform: translateX(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes slideUp {
-  from {
-      opacity: 0;
-      transform: translateY(50px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #latest-insights h2 {
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: all 0.6s ease-in-out;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease-in-out;
 }
 
 .insights-grid .insight {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s ease-in-out;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-in-out;
 }
 
 #latest-insights h2.animate {
-  animation: slideInLeft 0.8s forwards;
+    animation: slideInLeft 0.8s forwards;
 }
 
 .insights-grid .insight.animate {
-  animation: slideUp 0.8s forwards;
+    animation: slideUp 0.8s forwards;
 }
 
 /* Contact Us Section */
@@ -1043,7 +1080,18 @@ h4 {
   
 /* Responsive Styles */
 @media (max-width: 1024px) {
-  .container {
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+    .container {
       width: 95%;
   }
 
@@ -1054,8 +1102,48 @@ h4 {
   }
   .about h2 {
     margin-bottom: 1.5rem;
-
 }
+.about p{
+    text-align: left;
+  }
+.form-group {
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-us {
+    padding: 3rem 1rem;
+}
+
+.contact-us h2 {
+    font-size: 1.75rem;
+}
+
+.btn {
+    width: 100%; /* Full width button for easier tapping */
+    padding: 1rem;
+}
+.insights-grid {
+    flex-direction: column;
+    align-items: center;
+}
+
+.insight {
+    width: 90%;
+}
+.cta-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+}
+}
+
+@media (max-width: 480px) {
+.cta-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+}
+}
+
 
 @media (max-width: 768px) {
   body {
@@ -1101,32 +1189,75 @@ h4 {
         width: 18px;
         height: 2px;
     }
+    .hero {
+        padding: 2.5rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .cta {
+        padding: 1rem;
+        font-size: 1rem;
+    }
 
   .about h2,
   .about p {
-      text-align: center;
+      text-align: left;
       margin-left: 0;
   }
 
-    .benefits-container {
-      display: flex;
-      flex-direction: column; 
-      align-items: center; 
-      text-align: center;
-      width: 100%; 
-  }
+   .benefits-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    .benefits-image img {
+        order: -1;
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 1rem;
+    }
+    .benefits-content {
+        width: 100%;
+        text-align: center;
+    }
 
-  .benefits-container img {
-      order: -1; 
-      width: 100%; 
-      max-width: 400px; 
-      margin-bottom: 1rem; 
-  }
+    .benefits-content h2 {
+        font-size: 1.8rem;
+    }
+    .benefits-content li {
+        flex-direction: column;
+        align-items: center;
+        font-size: 1rem;
+    }
+    .progress-bar {
+        width: 90%;
+        margin: 0 auto 1rem;
+    }
 
-  .benefits-container .content {
-      width: 100%; 
-  }
+  .form-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .contact-us {
+        padding: 3rem 1rem;
+    }
 
+    .contact-us h2 {
+        font-size: 1.75rem;
+    }
+
+    .btn {
+        width: 100%; 
+        padding: 1rem;
+    }
   .footer {
       display: flex;
       flex-wrap: wrap;
@@ -1170,9 +1301,30 @@ h4 {
   .help-grid {
       flex-direction: column;
   }
+  .benefits {
+    padding: 3rem 0.5rem;
+    }
+
+    .benefits-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .benefits-content li {
+        font-size: 0.9rem;
+    }
+
+    .progress-bar {
+        width: 100%;
+    }
 
   .container {
       padding: 0 10px;
   }
+  .contact-us h2 {
+    font-size: 1.5rem;
+}
+
+.btn {
+    font-size: 1rem;
 }
 }

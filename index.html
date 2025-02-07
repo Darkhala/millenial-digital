@@ -47,7 +47,7 @@
         <div class="container">
             <h1>
                 <span id="first">THE</span> <br>
-                <span class="outline">MILLENNIAL</span> <br>
+                <span class="outline">MILLENIAL</span> <br>
                 <span id="last">DIGITAL</span>
             </h1>
             <p><br><br> Empowering Africa's Brands Through Digital Excellence..</p>
@@ -422,13 +422,16 @@
                     </div>
                 </div>
             </div>
+            <div class="cta-container">
+                <a href="Portforlio.html" class="cta-button">View Portforlio</a>
+            </div>
         </div>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 // Custom Cursor
                 const cursor = document.createElement("div");
                 cursor.classList.add("custom-cursor");
-                cursor.textContent = "OUR PROJECT";
+                cursor.textContent = "view more";
                 document.body.appendChild(cursor);
 
                 const workItems = document.querySelectorAll(".work-item img");
@@ -450,7 +453,7 @@
                     });
 
                     img.addEventListener("click", () => {
-                        window.location.href = "#work"; 
+                        window.location.href = "portforlio.html"; 
                     });
                 });
 
@@ -617,26 +620,29 @@
             });
         </script>
     </section>
-    <!--latest insights -->
+    <!-- Latest Insights -->
     <section id="latest-insights" class="latest-insights">
         <div class="container">
-            <h2>Latest Insights <a href="Blogs.html" class="view-more">View More Blogs</a></h2>
+            <h2>Latest Insights</h2>
             <div class="insights-grid">
                 <div class="insight">
                     <a href="design-process.html">
-                    <img src="images/Build-your-online-presence.jpg" alt="Blog 1"></a>
+                        <img src="images/Build-your-online-presence.jpg" alt="Blog 1">
+                    </a>
                     <p class="date">April 27, 2023</p>
                     <h4>5 Tips to Elevate Your Brand’s Digital Presence</h4>
                     <p>Learn how to create a standout strategy that captures your audience’s attention.</p>
                 </div>
                 <div class="insight">
                     <a href="branding-strategy.html">
-                    <img src="images/storytelling dm.jpeg" alt="Blog 2"></a>
+                        <img src="images/storytelling dm.jpeg" alt="Blog 2">
+                    </a>
                     <p class="date">May 10, 2023</p>
                     <h4>Why Storytelling Matters in Digital Marketing</h4>
                     <p>Understand the power of authentic stories in creating emotional connections.</p>
                 </div>
             </div>
+            <a href="Blogs.html" class="cta-button">View More Blogs</a>
         </div>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
