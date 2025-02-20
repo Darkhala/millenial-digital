@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why Storytelling Matters in Digital Marketing</title>
-    <link rel="icon" type="image/png" href="images/THE MILLENIAL LOGO (5).png">
-    <link rel="stylesheet" href="css/content.css">
+    <title>Dreamy Visions</title>
+    <link rel="stylesheet" href="css/portforlio.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
 </head>
 <body>
-
-     <!-- Header Section -->
-     <header class="header">
+    <!-- Header Section -->
+    <header class="header">
         <div class="social-icons">
             <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
@@ -43,28 +40,59 @@
             <a href="index.html#insights">Latest Insights</a>
         </nav>
     </header>
-    <!--body-->
-    <div class="container">
-        <h1 class="title">Why Storytelling Matters in Digital Marketing</h1>
+    <!-- Portforlio Section -->
+    <section class="portforlio-container">
+        <h1 class="title">Our <br> Portforlio</h1>
         <div class="content">
-            <img src="images/storytelling dm.jpeg" alt="Storytelling in Digital Marketing">
-            <p>Storytelling has always been a powerful tool, but in the digital age, its relevance has skyrocketed. Here’s why storytelling is essential in digital marketing:</p>
-            <h2 class="subheading">1. Stories Build Emotional Connections</h2>
-            <p>Stories create a bridge between your brand and your audience. When you share relatable experiences or customer success stories, you evoke emotions that lead to trust and loyalty.</p>
-            <h2 class="subheading">2. They Simplify Complex Concepts</h2>
-            <p>If your brand operates in a technical or niche industry, stories can simplify your message. For instance, case studies or behind-the-scenes content can make your processes relatable.</p>
-            <h2 class="subheading">3. People Remember Stories, Not Facts</h2>
-            <p>Statistics might impress, but stories stick. Use anecdotes, customer journeys, or even fictional scenarios to make your brand memorable.</p>
-            <h2 class="subheading">4. Stories Drive Engagement</h2>
-            <p>Compelling stories encourage shares, comments, and likes. They humanize your brand, making it easier for audiences to connect with you.</p>
-            <h2 class="subheading">5. A Story Gives Your Brand a Soul</h2>
-            <p>In a crowded market, brands with a soul stand out. Your brand story—how you started, the challenges you overcame, and your vision—makes your audience care.</p>
-            <p>Incorporating storytelling into your digital marketing strategy isn’t just an option; it’s a necessity in creating lasting relationships with your customers.</p>
-            <p><strong>Noanne C.</strong></p>
+            <img src="images/social media engagement.jpeg" alt="Dreamy Visions" class="project-image">
+            <div class="project-details">
+                <p><strong>CLIENT</strong> <span>Ishara</span></p>
+                <p><strong>ROLE</strong> <span>Engagement boost</span></p>
+                <p><strong>YEAR</strong> <span>2024</span></p>
+                <p><strong>DESCRIPTION</strong> <span>Increased Instagram engagement by 75% for a lifestyle brand.</span></p>
+            </div>
         </div>
-    </div>
-       <!-- Footer Section -->
-       <footer class="footer">
+        <div class="content">
+            <img src="images/youtubeCampaign.jpeg" alt="Dreamy Visions" class="project-image">
+            <div class="project-details">
+                <p><strong>CLIENT</strong> <span>The millenial digital</span></p>
+                <p><strong>ROLE</strong> <span>YouTube Campaign</span></p>
+                <p><strong>YEAR</strong> <span>2024</span></p>
+                <p><strong>DESCRIPTION</strong> <span>Managed a YouTube campaign reaching 500K views in 3 months.</span></p>
+            </div>
+        </div>
+        <div class="content">
+            <img src="images/youtubeCampaign.jpeg" alt="Dreamy Visions" class="project-image">
+            <div class="project-details">
+                <p><strong>CLIENT</strong> <span>The Millenial News</span></p>
+                <p><strong>ROLE</strong> <span>Podcast Success</span></p>
+                <p><strong>YEAR</strong> <span>2024</span></p>
+                <p><strong>DESCRIPTION</strong> <span>Developed a podcast series with over 20K listens and subscribers.</span></p>
+            </div>
+        </div>
+    </section>
+     <!--Companies we've worked with section-->
+     <section class="logo-slider">
+        <h2>Companies we've worked with</h2>
+        <div class="logo-track">
+            <img src="images/S.H.I.E.L.D-removebg-preview.png" alt="Company 1">
+            <img src="images/ishara_logo-removebg-preview.png" alt="Company 2">
+            <img src="images/Gandir_africa-removebg-preview.png" alt="Company 3">
+            <img src="images/S.H.I.E.L.D-removebg-preview.png" alt="Company 1">
+            <img src="images/ishara_logo-removebg-preview.png" alt="Company 2">
+            <img src="images/Gandir_africa-removebg-preview.png" alt="Company 3">
+        </div>
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const track = document.querySelector(".logo-track");
+            const logos = track.innerHTML; // Get the current logos
+            track.innerHTML += logos; // Duplicate logos to ensure continuous loop
+        });
+
+        </script>
+    </section>
+    <!-- Footer Section -->
+    <footer class="footer">
         <div class="container">
         <div class="footer-branding">
             <h3>The Millenial Digital</h3>
@@ -74,11 +102,11 @@
         <div class="footer-links">
             <h4>Quick Links</h4>
             <ul>
-                <li><a href="index.html#about">About Us</a></li>
-                <li><a href="index.html#benefits">Services</a></li>
-                <li><a href="index.html#work">Work Portfolio</a></li>
-                <li><a href="index.html#latest-insights">Blog</a></li>
-                <li><a href="index.html#contact">Contact Us</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#benefits">Services</a></li>
+            <li><a href="#work">Work Portfolio</a></li>
+            <li><a href="#latest-insights">Blog</a></li>
+            <li><a href="#contact">Contact Us</a></li>
             </ul>
         </div>
         <div class="footer-contact">
@@ -103,6 +131,7 @@
         </div>
         </div>
     </footer>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const observer = new IntersectionObserver(entries => {
@@ -112,21 +141,21 @@
                     }
                 });
             }, { threshold: 0.2 });
-        
+
             document.querySelectorAll("#latest-insights h2, .insights-grid .insight, #contact h2, #contact form").forEach(el => {
                 observer.observe(el);
             });
-        
+
             // Hamburger Menu Functionality
             const hamburger = document.getElementById('hamburger');
             const menu = document.getElementById('menu');
             const menuLinks = document.querySelectorAll(".menu a");
-        
+
             hamburger.addEventListener('click', () => {
                 hamburger.classList.toggle('active');
                 menu.classList.toggle('active');
             });
-        
+
             menuLinks.forEach((link, index) => {
                 link.style.animation = `slideIn 0.3s ease forwards ${index * 100}ms`;
                 link.addEventListener("click", () => {
@@ -134,7 +163,7 @@
                     hamburger.classList.remove("active");
                 });
             });
-        
+
             // CSS styles for animations
             const style = document.createElement("style");
             style.innerHTML = `
@@ -143,26 +172,26 @@
                     transform: translateY(20px);
                     transition: all 0.6s ease;
                 }
-        
+
                 .visible {
                     opacity: 1;
                     transform: translateY(0);
                 }
-        
+
                 .hamburger.active div:nth-child(1) {
                     transform: rotate(45deg) translate(5px, 5px);
                 }
-        
+
                 .hamburger.active div:nth-child(2) {
                     opacity: 0;
                 }
-        
+
                 .hamburger.active div:nth-child(3) {
                     transform: rotate(-45deg) translate(5px, -5px);
                 }
             `;
             document.head.appendChild(style);
         }); 
-            </script>
+    </script>
 </body>
 </html>

@@ -878,7 +878,38 @@ h4 {
 .insights-grid .insight.animate {
     animation: slideUp 0.8s forwards;
 }
+/*companies we've worked with Section */
+.logo-slider {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    border-radius: 10px;
+}
 
+.logo-track {
+    display: flex;
+    width: calc(200px * 20); /* Double the number of logos */
+    animation: scroll 20s linear infinite; /* Faster speed to maintain smooth transition */
+}
+
+.logo-track img {
+    width: 150px;
+    height: auto;
+    margin: 0 20px;
+}
+
+/* Keyframes for Infinite Continuous Scrolling */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%); /* Move only half since we doubled the logos */
+    }
+}
 /* Contact Us Section */
 .contact-us {
     color: #ffffff;
@@ -1106,6 +1137,20 @@ h4 {
 .about p{
     text-align: left;
   }
+
+  .logo-slider {
+    padding: 15px 0;
+}
+
+.logo-track {
+    width: calc(150px * 10); /* Adjust width for smaller logos */
+    animation: scroll 30s linear infinite; /* Slightly faster animation */
+}
+
+.logo-track img {
+    width: 100px; /* Reduce logo size */
+    margin: 0 10px; /* Reduce spacing */
+}
 .form-group {
     flex-direction: column;
     gap: 0.75rem;
@@ -1211,6 +1256,19 @@ h4 {
       text-align: left;
       margin-left: 0;
   }
+  .logo-slider {
+    padding: 15px 0;
+}
+
+.logo-track {
+    width: calc(150px * 10); /* Adjust width for smaller logos */
+    animation: scroll 30s linear infinite; /* Slightly faster animation */
+}
+
+.logo-track img {
+    width: 100px; /* Reduce logo size */
+    margin: 0 10px; /* Reduce spacing */
+}
 
    .benefits-container {
         flex-direction: column;

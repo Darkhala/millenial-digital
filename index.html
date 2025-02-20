@@ -660,6 +660,26 @@
             });
         </script>
     </section>
+    <!--Companies we've worked with section-->
+    <section class="logo-slider">
+        <h2>Companies we've worked with</h2>
+        <div class="logo-track">
+            <img src="images/S.H.I.E.L.D-removebg-preview.png" alt="Company 1">
+            <img src="images/ishara_logo-removebg-preview.png" alt="Company 2">
+            <img src="images/Gandir_africa-removebg-preview.png" alt="Company 3">
+            <img src="images/S.H.I.E.L.D-removebg-preview.png" alt="Company 1">
+            <img src="images/ishara_logo-removebg-preview.png" alt="Company 2">
+            <img src="images/Gandir_africa-removebg-preview.png" alt="Company 3">
+        </div>
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const track = document.querySelector(".logo-track");
+            const logos = track.innerHTML; // Get the current logos
+            track.innerHTML += logos; // Duplicate logos to ensure continuous loop
+        });
+
+        </script>
+    </section>
     <!-- Contact Us Section -->
     <section id="contact" class="contact-us">
         <div class="container">
@@ -722,7 +742,7 @@
     <footer class="footer">
         <div class="container">
         <div class="footer-branding">
-            <h3>The Millennial Digital</h3>
+            <h3>The Millenial Digital</h3>
             <p>We help you connect authentically with your audience through creative strategies and impactful campaigns.</p>
             <p>&copy; 2025 The Millennial Digital. All rights reserved.</p>
         </div>
